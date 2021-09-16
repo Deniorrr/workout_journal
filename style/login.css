@@ -1,0 +1,39 @@
+.wrapper {
+    background: linear-gradient(to left, #c21500, #ffc500);
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.button_submit {
+    background: linear-gradient(to left, #c21500, #ffc500);
+    background-size: 105%;
+    background-position-x: 40%;
+    background-repeat: cover;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+    margin: 10px 0;
+    color: #fff !important
+}
+
+.button_submit:hover {
+    color: #333 !important;
+
+}
+
+form {
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding-bottom: 0;
+}
+
+.form-control {
+    border: none !important;
+    background-color: #222 !important;
+    color: #aaa !important;
+}
+
+.form-control:focus {
+    background-color: #111 !important;
+    box-shadow: none !important;
+    color: #fff !important;
+}

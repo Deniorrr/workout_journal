@@ -1,0 +1,26 @@
+body {
+    color: white;
+}
+
+.nav_wrapper {
+    padding-bottom: 3px;
+    background: linear-gradient(to left, #c21500, #ffc500);
+}
+
+
+.bgc-dark {
+    background-color: #222;
+}
+
+
+.nav_right {
+    right: 150px;
+    top: -5px;
+}
+
+.login * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+}
