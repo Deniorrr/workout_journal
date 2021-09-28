@@ -1,8 +1,51 @@
-.row {
-    background-color: hotpink;
-    padding: 1px;
+.unit-form-header {
+    padding-bottom: 2px;
+    margin-bottom: 15px;
+    background: linear-gradient(to left, #c21500, #ffc500);
 }
 
-form {
+.form-group {
+    font-size: 25px;
+}
+
+.inner-header {
     background-color: #222222;
+}
+
+th {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.form-table {}
+
+.add_button {
+    color: white;
+    background: linear-gradient(to left, #c21500, #ffc500);
+    border-radius: 3px;
+    border: none;
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+    margin: 5px;
+}
+
+.submit_button {
+    font-size: 25px;
+    border: none;
+    background: #111;
+    color: #fff;
+    width: 100%;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.submit_button:hover {
+    background: #222;
+}
+
+.submit_wrapper {
+    background: linear-gradient(to left, #c21500, #ffc500);
+    padding: 2px;
+    border-radius: 5px;
 }

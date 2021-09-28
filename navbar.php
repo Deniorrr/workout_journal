@@ -42,7 +42,7 @@
 
           <?php
           if (isset($_SESSION["name"])) {
-            echo $_SESSION["name"];
+            echo $_SESSION["name"] . $_SESSION["id"];
           } else {
             echo "Login";
           }

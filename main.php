@@ -65,7 +65,7 @@ if (!isset($_SESSION["name"])) header('Location: index.php');
         </div>
       </div>
     </a>
-    <a class="col-md-6" href="add_exercise.php">
+    <!-- <a class="col-md-6" href="add_exercise.php">
       <div class="applet-wrapper applet-right" role="button">
         <div class=" row align-items-center bgc-darker py-4">
           <div class="col-md-4">
@@ -76,7 +76,7 @@ if (!isset($_SESSION["name"])) header('Location: index.php');
           </div>
         </div>
       </div>
-    </a>
+    </a> -->
     <a class="col-md-6" href="add_unit.php">
       <div class="applet-wrapper applet-bottom" role="button">
         <div class="row align-items-center bgc-darker py-4">
@@ -89,6 +89,7 @@ if (!isset($_SESSION["name"])) header('Location: index.php');
         </div>
       </div>
     </a>
+
   </div>
 </div>
 </div>

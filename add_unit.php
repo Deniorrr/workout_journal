@@ -8,27 +8,52 @@ if (!isset($_SESSION["name"])) header('Location: index.php');
     <link rel="stylesheet" href="add_unit.css">
 </head>
 <div class="container">
-    <div class="row">
-        <form>
-            <div class="form-row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="training_name">Name your training unit</label>
-                        <input type="email" class="form-control" id="training_name" placeholder="Enter the name">
+    <div class="row mt-4 ">
+        <form class="col-12" action="add_unit_script.php" method="POST">
+            <div class="unit-form-header">
+                <?php
+                if (!empty($_SESSION["error_text"])) print(" <div class='alert alert-danger' role='alert'>" . $_SESSION["error_text"] . "</div>");
+                //clear the error_text 
+                $_SESSION["error_text"] = ""
+                ?>
+                <div class="form-row inner-header">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="training_name">Name of the unit:</label>
+                            <input type="text" class="form-control" id="training_name" name="training_name" placeholder="For example: 'Endurance unit'">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label for="weight">Weight (kg): </label>
+                            <input type="number" class="form-control" id="weight" name="weight" placeholder="weight">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label for="date">Date of the training</label>
+                            <input type="date" class="form-control" id="date" name="date" placeholder="date">
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="weight">Your weight during the unit (kg)</label>
-                        <input type="number" class="form-control" id="weight" placeholder="weight">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="date">
-                        <label for="weight">Date of the training</label>
-                        <input type="date" class="form-control" id="date" placeholder="date">
-                    </div>
-                </div>
+            </div>
+            <table style="width:100%" border class="form-table">
+                <tr style="width:100%">
+                    <th style="width: 40%">exercise</th>
+                    <th style="width: 15%">weight</th>
+                    <th style="width: 15%">reps</th>
+                    <th style="width: 10%">sets</th>
+                    <th style="width: 20%">time</th>
+                </tr>
+                <script src="script.js"></script>
+            </table>
+            <div class="d-flex justify-content-end">
+                <input type="button" value="+" class="add_button" onclick="add_row()">
+
+                <!-- dodać submita, jakieś usuwanie, sprawdzić czy php to jakoś czyta, poprawić wygląd tabeli -->
+            </div>
+            <div class="submit_wrapper col-2">
+                <input type="submit" value="Submit" class="submit_button">
             </div>
         </form>
     </div>

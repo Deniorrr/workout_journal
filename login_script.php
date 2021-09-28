@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "connect.php";
-
+if (isset($_SESSION["name"])) header('Location: main.php');
 $connection = @new mysqli($connect[0], $connect[1], $connect[2], $connect[3]);
 
 
@@ -23,8 +23,9 @@ if ($connection->connect_errno) {
         $result = $connection->query($query);
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
+            $_SESSION["error_text"] = NULL;
             $_SESSION["name"] = $row['first_name'];
-            // $_SESSION["name"] = 
+            $_SESSION["id"] = $row['ID'];
             header('Location: main.php');
         } else {
             $_SESSION["error_text"] = "Wrong password! Try again";

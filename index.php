@@ -21,9 +21,9 @@ if (isset($_SESSION["name"])) header('Location: main.php');
 
 ?>
 <div class="container">
-    <div class="row justify-content-md-center">
-        <h1 class="text-center col-md-7 border-bottom-2 border-white">PLZ LOGIN! PLZ</h1>
-    </div>
+  <div class="row justify-content-md-center">
+    <h1 class="text-center col-md-7 border-bottom-2 border-white">PLZ LOGIN! PLZ</h1>
+  </div>
 </div>
 
 
