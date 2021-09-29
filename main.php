@@ -34,12 +34,22 @@ if (!isset($_SESSION["name"])) header('Location: index.php');
           <div class="col-md-8">
             <h2 class="text-center border-bottom-2 border-white">Users data</h2>
             <p><span class="font-weight-bold">Name:</span> <?php echo $_SESSION["name"] ?></p>
-            <p><span class="font-weight-bold">Last weight:</span> 75 Kg</p>
+            <p><span class="font-weight-bold">Last weight:</span>
+              <?php
+              require_once "connect.php";
+              $connection = @new mysqli($connect[0], $connect[1], $connect[2], $connect[3]);
+              $query = "SELECT weight FROM `units` WHERE units.user_id = " . $_SESSION["id"] . " ORDER BY units.id DESC LIMIT 1";
+              $result = $connection->query($query);
+              while ($row = $result->fetch_assoc()) {
+                print($row["weight"] . " kg");
+              }
+              ?>
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <a class="col-md-6" href="recorded_sessions.php">
       <div class="applet-wrapper applet-right" role="button">
         <div class="row align-items-center bgc-darker">
           <div class="col-md-4">
@@ -47,12 +57,28 @@ if (!isset($_SESSION["name"])) header('Location: index.php');
           </div>
           <div class="col-md-8">
             <h2 class="text-center border-bottom-2 border-white">Recorded sessions</h2>
-            <p><span class="font-weight-bold">Last recorded training:</span> over 2 weeks ago</p>
-            <p><span class="font-weight-bold">Overall trainings recorded:</span> 20</p>
+            <p><span class="font-weight-bold">Last recorded training:</span>
+              <?php
+              $query = "SELECT date FROM `units` WHERE units.user_id = " . $_SESSION["id"] . " ORDER BY units.id DESC LIMIT 1";
+              $result = $connection->query($query);
+              while ($row = $result->fetch_assoc()) {
+                print($row["date"]);
+              }
+              ?>
+            </p>
+            <p><span class="font-weight-bold">Overall trainings recorded:</span>
+              <?php
+              $query = "SELECT COUNT(id) FROM units WHERE units.user_id = " . $_SESSION["id"];
+              $result = $connection->query($query);
+              while ($row = $result->fetch_assoc()) {
+                print($row["COUNT(id)"]);
+              }
+              ?>
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </a>
     <a class="col-md-6" href="add_unit.php">
       <div class="applet-wrapper applet-left" role="button">
         <div class=" row align-items-center bgc-darker py-4">

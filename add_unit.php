@@ -5,7 +5,7 @@ if (!isset($_SESSION["name"])) header('Location: index.php');
 ?>
 
 <head>
-    <link rel="stylesheet" href="add_unit.css">
+    <link rel="stylesheet" href="style/add_unit.css">
 </head>
 <div class="container">
     <div class="row mt-4 ">
